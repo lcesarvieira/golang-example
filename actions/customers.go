@@ -2,6 +2,7 @@ package actions
 
 import (
 	"github.com/gobuffalo/buffalo"
+	"github.com/brianvoe/gofakeit/v4"
 )
 
 // CustomersList default implementation.
@@ -14,18 +15,15 @@ func CustomersList(c buffalo.Context) error {
 		address   string `fake:"{person.address}"`
 	}
 
-	customers := Customer{}
+	var customers []Customer
 
-	for i := 0; i < 50; i++ {
-		// Pass your struct as a pointer
-		//var f Customer{}
-		customers = Customer{
-			firstName: gofakeit.firstName(),
-			lastName:  gofakeit.lastName(),
-			address:   gofakeit.address(),
-		}
+	for i := 0; i < 10; i++ {
+		customers = append( customers,Customer{
+			firstName: gofakeit.FirstName(),
+			lastName:  gofakeit.LastName(),
+			address:   gofakeit.Address().Address,
+		})	
 	}
-
-	//rest.Marshalled(c, &customers, http.StatusOK)
-	return c.Render(200, r.JSON(&customers))
+	
+	return c.Render(200, r.JSON(customers))
 }
