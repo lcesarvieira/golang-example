@@ -64,6 +64,11 @@ func App() *buffalo.App {
 		app.GET("/home", HomeHandler)
 		app.GET("/about", AboutHandler)
 
+		g := app.Group("/api/v1")
+		//g.Use(APIAuthorizer)
+		// responds to GET /api/v1/users
+		g.GET("/customers/list", CustomersList)
+
 		app.ServeFiles("/", assetsBox) // serve files from the public directory
 	}
 

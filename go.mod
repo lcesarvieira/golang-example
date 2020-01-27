@@ -3,9 +3,9 @@ module exampleapp
 go 1.13
 
 require (
-	github.com/brianvoe/gofakeit/v4 v4.2.1 // indirect
+	github.com/brianvoe/gofakeit/v4 v4.2.1
 	github.com/cockroachdb/cockroach-go v0.0.0-20190925194419-606b3d062051 // indirect
-	github.com/edermanoel94/rest-go v0.0.0-20190930044059-43f0f4c98eeb // indirect
+	github.com/edermanoel94/rest-go v0.0.0-20190930044059-43f0f4c98eeb
 	github.com/fatih/color v1.9.0 // indirect
 	github.com/go-sql-driver/mysql v1.5.0 // indirect
 	github.com/gobuffalo/buffalo v0.15.3
