@@ -1,4 +1,4 @@
-# Welcome to Buffalo!
+# Welcome to GoLangExample using Buffalo!
 
 Thank you for choosing Buffalo for your web development needs.
 
